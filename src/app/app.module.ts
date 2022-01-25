@@ -12,7 +12,9 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { rootRouterConfig } from './app.routes';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
-import { ProdutosService } from './produtos/produtos.service';
+import { ProdutoService } from './produtos/produto.service';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { ProdutosService } from './produtos/produtos.service';
     SobreComponent,
     ContatoComponent,
     DataBindingComponent,
+    ListaProdutoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig)]
   ],
   providers: [
-    ProdutosService,
+    ProdutoService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
